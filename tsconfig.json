@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "target": "es2015",
+    "module": "commonjs",
+    "jsx": "react",
+    "importHelpers": true,
+    "strict": true,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "noEmit": true
+  },
+  "include": ["./src/**/*"],
+  "exclude": ["templates"]
+}

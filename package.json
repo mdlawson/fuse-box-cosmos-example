@@ -1,0 +1,42 @@
+{
+  "name": "fuse-box-cosmos-example",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "ts-node fuse",
+    "build": "npm start -- dist",
+    "cosmos": "npm start -- cosmos",
+    "component": "create-component-app -t classComponent"
+  },
+  "keywords": [],
+  "author": "Michael Lawson <mdlawson@gmx.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/classnames": "^2.2.3",
+    "@types/react": "^16.0.34",
+    "@types/react-dom": "^16.0.3",
+    "create-component-app": "^1.6.1",
+    "fuse-box": "^3.0.2",
+    "fuse-box-typechecker": "^2.7.0",
+    "postcss-modules": "^1.1.0",
+    "react-cosmos-loader": "^3.2.1",
+    "react-cosmos-playground": "^3.2.1",
+    "ts-node": "^4.1.0",
+    "tslint": "^5.9.1",
+    "typescript": "^2.6.2",
+    "uglify-es": "^3.3.7"
+  },
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "tslib": "^1.9.0"
+  },
+  "prettier": {
+    "printWidth": 90,
+    "trailingComma": "all"
+  },
+  "cca": {
+    "templatesDirPath": "./templates",
+    "templates": ["classComponent"]
+  }
+}
