@@ -78,7 +78,7 @@ function config({ env, out, entry, path, serve, port }: Options) {
     sourceMaps: true,
     cache: isDev,
     useJsNext: true,
-    polyfillNonStandardDefaultUsage: true,
+    allowSyntheticDefaultImports: true,
     target: "browser@es2015",
     alias: {
       components: "~/components",
@@ -95,24 +95,18 @@ function config({ env, out, entry, path, serve, port }: Options) {
         CSSModules({
           scopedName: "[name]__[local]___[hash:base64:3]",
         }),
-        isDev
-          ? CSSPlugin()
-          : CSSPlugin({
-              group: "app.css",
-              outFile: "dist/app.css",
-            }),
+        CSSPlugin(),
       ],
-      isProd
-        ? QuantumPlugin({
-            bakeApiIntoBundle: "vendor",
-            processPolyfill: true,
-            removeExportsInterop: true,
-            ensureES5: false,
-            treeshake: true,
-            uglify: { es6: true },
-          })
-        : (null as any),
-      ,
+      isProd &&
+        QuantumPlugin({
+          bakeApiIntoBundle: "vendor",
+          processPolyfill: true,
+          ensureES5: false,
+          treeshake: true,
+          css: { clean: true, path: "app.css" },
+          uglify: true,
+          cleanCSS: true, // TODO: remove
+        }),
     ],
   });
 
