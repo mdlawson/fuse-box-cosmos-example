@@ -1,8 +1,6 @@
 import React from "react";
 import { render } from "react-dom";
 
-import "css/main.css";
+import Card from "./Card";
 
-import App from "./App";
-
-render(<App />, document.getElementById("app"));
+render(<Card>Hello World</Card>, document.getElementById("app"));
